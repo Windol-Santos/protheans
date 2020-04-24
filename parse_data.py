@@ -1,6 +1,5 @@
 import pathlib
 import pickle
-import numpy as np
 
 dataset_name = 'casp7'
 data_dir_path = pathlib.Path(dataset_name)
