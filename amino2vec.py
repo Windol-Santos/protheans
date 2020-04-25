@@ -14,7 +14,7 @@ y = np.load('data/y_0.npy')[:100000]
 num_size = X.shape[0]
 num_classes = len(get_amino_3grams_dict()) + 1
 
-inputs = [Input(shape=(num_size,), name='input_{}'.format(i)) for i in range(get_context_size())]
+inputs = [Input(shape=(num_classes,), name='input_{}'.format(i)) for i in range(get_context_size())]
 dense_layers = [Dense(num_hidden, activation='relu')(inp) for inp in inputs]
 hidden = Average()(dense_layers)
 output = Dense(num_classes, activation='softmax')(hidden)
